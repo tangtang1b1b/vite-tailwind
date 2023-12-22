@@ -10,15 +10,15 @@ const imageTwos = ref(['images/03.jpg', 'images/04.jpg', 'images/01.jpg', 'image
 
 <template>
   <div class="wrap w-full mx-auto">
-    <div class="wrapCarousel h-1/2 bg-white border border-2 border-b-black">
-      <carousel class="myCarouselOne h-full" :pauseAutoplayOnHover="true" :transition="700" :autoplay="3000" :wrap-around="true">
+    <div class="wrapCarousel h-1/2 bg-white">
+      <carousel class="myCarouselOne h-full" :transition="700" :autoplay="3000" :wrap-around="true">
         <slide class="myCarouselList" v-for="image in imageOnes" :key="image">
           <img class="h-full" :src="image" alt="model">
         </slide>
       </carousel>
     </div>
-    <div class="wrapCarousel h-1/2 bg-white border border-2 border-b-black">
-      <carousel class="myCarouselTwo h-full" :pauseAutoplayOnHover="true" :transition="700" :autoplay="3000" :wrap-around="true">
+    <div class="wrapCarousel h-1/2 bg-white">
+      <carousel class="myCarouselTwo h-full" :transition="700" :autoplay="3000" :wrap-around="true">
         <slide class="myCarouselList" v-for="image in imageTwos" :key="image">
           <img class="h-full" :src="image" alt="model">
         </slide>
@@ -28,7 +28,24 @@ const imageTwos = ref(['images/03.jpg', 'images/04.jpg', 'images/01.jpg', 'image
 </template>
 
 <style lang="scss" scoped>
+@mixin pad {
+  @media (min-width:1024px) {
+    @content
+  }
+}
+
 .wrap {
   height: calc(100vh - 120px);
-}
-</style>
+
+  // @include pad {
+  //   height: calc(100vh - 200px);
+  // }
+  .wrapCarousel {
+    border: solid 2px #000;
+    border-top: none;
+  }
+
+  .wrapCarousel:nth-child(2) {
+    border-bottom: none;
+  }
+}</style>
