@@ -3,10 +3,12 @@ import Navbar from './components/Navbar.vue'
 import ScrollTop from './components/ScrollTop.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import NewModel from './components/NewModel.vue'
+import HamberView from './components/HamberView.vue'
 </script>
 
 <template>
   <div class="BannerContainer">
+    <HamberView />
     <Navbar />
     <HelloWorld />
     <ScrollTop />
@@ -24,9 +26,8 @@ import NewModel from './components/NewModel.vue'
 .BannerContainer{
   position: relative;
   height: 100%;
-  display: grid;
-  grid-template-rows: 60px 1fr 60px;
   .modelTitle{
+    height: 60px;
     border: solid 2px #000;
   }
 }

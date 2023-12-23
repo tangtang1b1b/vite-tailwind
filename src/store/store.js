@@ -1,8 +1,8 @@
-import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { ref, computed } from 'vue';
+import { defineStore } from 'pinia';
 
 export const useStore = defineStore('store', () => {
+  const isClick = ref(false);
 
-
-  return {}
-})
+  return { isClick };
+});

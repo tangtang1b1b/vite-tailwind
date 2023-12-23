@@ -36,10 +36,7 @@ const imageTwos = ref(['images/03.jpg', 'images/04.jpg', 'images/01.jpg', 'image
 
 .wrap {
   height: calc(100vh - 120px);
-
-  // @include pad {
-  //   height: calc(100vh - 200px);
-  // }
+  margin-top: 60px;
   .wrapCarousel {
     border: solid 2px #000;
     border-top: none;
@@ -48,4 +45,5 @@ const imageTwos = ref(['images/03.jpg', 'images/04.jpg', 'images/01.jpg', 'image
   .wrapCarousel:nth-child(2) {
     border-bottom: none;
   }
-}</style>
+}
+</style>

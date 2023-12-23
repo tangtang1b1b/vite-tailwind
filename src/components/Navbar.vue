@@ -1,20 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import { useStore } from '../store/store';
+const store = useStore();
 
 const hamberButton = ref(null);
 const hamberClick = () => {
+  store.isClick = !store.isClick;
   hamberButton.value.classList.toggle('isClick');
 }
 </script>
 
 <template>
-  <header class="sticky top-0 bg-white z-10">
+  <header class="fixed top-0 w-full bg-white z-30">
     <nav class="navBar relative w-full h-full flex justify-between items-center">
       <div class="hamberger h-full flex justify-center items-center border border-2 border-black hover:cursor-pointer" @click="hamberClick">
         <div ref="hamberButton" class="hamberButton bg-black w-1/2 h-1/2"></div>
       </div>
       <div
-        class="themeName absolute h-full flex justify-center items-center left-1/2 -translate-x-1/2 text-3xl border-y-black border-y-2">
+        class="themeName absolute h-full flex justify-center items-center left-1/2 -translate-x-1/2 text-2xl border-y-black border-y-2">
         VIRTUALMODEL</div>
       <div class="funcContainer h-full flex items-center justify-center border border-2 border-black hover:cursor-pointer">
         <span class="material-symbols-outlined">person</span>
