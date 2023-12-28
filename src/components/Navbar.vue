@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import ThirdLogin from './ThirdLogin.vue';
 import { useStore } from '../store/store';
 const store = useStore();
 
@@ -8,6 +9,7 @@ const hamberClick = () => {
   store.isClick = !store.isClick;
   hamberButton.value.classList.toggle('isClick');
 }
+
 </script>
 
 <template>
@@ -19,9 +21,8 @@ const hamberClick = () => {
       <div
         class="themeName absolute h-full flex justify-center items-center left-1/2 -translate-x-1/2 text-2xl border-y-black border-y-2">
         VIRTUALMODEL</div>
-      <div class="funcContainer h-full flex items-center justify-center border border-2 border-black hover:cursor-pointer">
-        <span class="material-symbols-outlined">person</span>
-        <!-- <span class="material-symbols-outlined">logout</span> -->
+      <div class="funcContainer h-full border border-2 border-black hover:cursor-pointer">
+        <ThirdLogin />
       </div>
     </nav>
   </header>
@@ -42,6 +43,7 @@ const hamberClick = () => {
 
   .hamberger {
     width: 60px;
+
     .hamberButton {
       clip-path: polygon(0 0, 0% 20%, 0 49%, 0% 80%, 0 100%, 49% 100%, 100% 100%, 100% 80%, 100% 52%, 100% 20%, 100% 0, 50% 0);
       transition: 0.3s;
@@ -61,9 +63,6 @@ const hamberClick = () => {
 
   .funcContainer {
     width: 60px;
-    span {
-      font-size: 30px;
-    }
   }
 }
 </style>

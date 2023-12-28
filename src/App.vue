@@ -25,7 +25,7 @@ import HamberView from './components/HamberView.vue'
 }
 .BannerContainer{
   position: relative;
-  height: 100%;
+  height: calc(100% - 60px);
   .modelTitle{
     height: 60px;
     border: solid 2px #000;
